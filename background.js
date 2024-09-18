@@ -53,6 +53,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
 	if (changeInfo.status === 'complete' && tab.url) {
 		// Clicks due option on the old hunter website?
+		console.log(tab.url);
 		if (tab.url == 'https://hunterschools.myschoolapp.com/app/student#studentmyday/assignment-center') {
 			chrome.scripting.executeScript({target: {tabId: tabId}, function: clickButton});
 		}
