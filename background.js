@@ -29,7 +29,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
 						console.log(identifier)
 					// Find the item with the specific key
-						const item = data.find(item => item.assignment_index_id.toString() === identifier);
+						const item = data.find(item => item.assignment_index_id == identifier);
 			
 						if (item) {
 							const newLink = `https://hunterschools.myschoolapp.com/app/student#assignmentdetail/${item.assignment_id}/${item.assignment_index_id}/0/studentmyday--assignment-center`;
