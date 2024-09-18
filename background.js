@@ -50,4 +50,21 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 			console.error('Not website ' + url.hostname );
 		}
 	}
+
+	if (changeInfo.status === 'complete' && tab.url) {
+		// Clicks due option on the old hunter website?
+		if (tab.url == 'https://hunterschools.myschoolapp.com/app/student#studentmyday/assignment-center') {
+			chrome.scripting.executeScript({target: {tabId: tabId}, function: clickButton});
+		}
+	}
 });
+
+function clickButton() {
+  const button = document.getElementByClassName("btn btn-sm btn-default assignmentDisplayTypeFilter btnCal active cal-filter-on"); 
+  if (button) {
+    button.click();
+  }
+}
+
+
+
