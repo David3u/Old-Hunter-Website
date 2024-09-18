@@ -1,6 +1,6 @@
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 	// Check if the tab is loading and has a URL
-	if (changeInfo.status === 'complete' && tab.url) {
+	if (changeInfo.status === 'loading' && tab.url) {
 		const url = new URL(tab.url);
 
 		// Is Hunter Website?
@@ -48,4 +48,25 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 		
 		}
 	}
+
+	if (changeInfo.status === 'complete' && tab.url) {
+		const url = new URL(tab.url);
+		// Clicks due option on the old hunter website?
+		console.log(url.toString());
+		if (url.toString() == 'https://hunterschools.myschoolapp.com/app/student#studentmyday/assignment-center') {
+			chrome.scripting.executeScript({target: {tabId: tabId}, function: clickButton});
+		}
+	}
 });
+
+function clickButton() {
+  const button = document.getElementByClassName("btn btn-sm btn-default assignmentDisplayTypeFilter btnCal active cal-filter-on"); 
+  if (button) {
+    button.click();
+  } else {
+  	console.log("Not Button");
+  }
+}
+
+
+
