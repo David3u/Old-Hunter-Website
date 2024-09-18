@@ -7,7 +7,8 @@ By David.
 
 ## Browers Added
 
-- **Chrome**
+- [x] **Chrome**
+- [ ] **FireFox**
 
 
 ## Installation
