@@ -63,6 +63,8 @@ function clickButton() {
   const button = document.getElementByClassName("btn btn-sm btn-default assignmentDisplayTypeFilter btnCal active cal-filter-on"); 
   if (button) {
     button.click();
+  } else {
+  	console.log("Not Button");
   }
 }
 
