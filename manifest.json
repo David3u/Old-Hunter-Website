@@ -1,10 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Old Hunter Website",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "permissions": [
     "tabs",
-    "scripting",
     "webRequest",
     "<all_urls>"
   ],
