@@ -1,7 +1,7 @@
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 	// Check if the tab is loading and has a URL
-	if (changeInfo.status === 'loading' && tab.url) {
+	if (changeInfo.status === 'complete' && tab.url) {
 		const url = new URL(tab.url);
 
 		// Is Hunter Website?
