@@ -14,20 +14,21 @@ By David.
 ## Installation
 
 __Chrome__ 
-1. Download the src of the latest release from the [releases page](https://github.com/David3u/Old-Hunter-Website/releases).
-2. Open Chrome and go to `chrome://extensions`.
-3. Enable "Developer mode" (toggle in the top right corner).
-4. Click on "Load unpacked" and select the extension directory, then select the chrome folder inside.
+1. Download chrome_src.zip from the latest release [here.](https://github.com/David3u/Old-Hunter-Website/releases).
+2. Unzip the file.
+3. Open Chrome and go to `chrome://extensions`.
+4. Enable "Developer mode" (toggle in the top right corner).
+5. Click on "Load unpacked" and select the extension directory, then select the chrome folder inside.
 
 __Firefox__
 
 (Manual)
-1. Download the Firefox.zip file
+1. Download firefox.zip from the latest release [here.](https://github.com/David3u/Old-Hunter-Website/releases).
 2. Go to `This Firefox` and open `Temporary Extensions`
 3. Click `Load Temporary Add-on...` and select the firefox.zip file
 
 (Addon)
-[here](https://addons.mozilla.org/en-US/firefox/addon/old-hunter-website/ )
+[here](https://addons.mozilla.org/en-US/firefox/addon/old-hunter-website/ ) (still waiting for mozilla to approve)
 
 ## Usage
 
