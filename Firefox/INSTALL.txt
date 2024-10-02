@@ -1,9 +1,8 @@
 INSTRUCTIONS TO INSTALL THE FIREFOX VERSION OF: Old-Hunter-Website
 
 (Manual)
-1. Download the Firefox.zip file
-2. Go to `This Firefox` and open `Temporary Extensions`
-3. Click `Load Temporary Add-on...` and select the firefox.zip file
+1. Go to `This Firefox` and open `Temporary Extensions`
+2. Click `Load Temporary Add-on...` and select the firefox.zip file (here or in the latest release)
 
 (Addon)
 [here](https://addons.mozilla.org/en-US/firefox/addon/old-hunter-website/ )
