@@ -1,11 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Old Hunter Website",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "permissions": [
     "tabs",
     "webRequest",
-    "<all_urls>"
+    "<all_urls>",
+    "scripting",
+    "activeTab"
   ],
 
   "host_permissions": [

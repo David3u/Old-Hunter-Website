@@ -28,7 +28,7 @@ __Firefox__
 3. Click `Load Temporary Add-on...` and select the firefox.zip file
 
 (Addon)
-[here](https://addons.mozilla.org/en-US/firefox/addon/old-hunter-website/ ) (still waiting for mozilla to approve)
+[here](https://addons.mozilla.org/en-US/firefox/addon/old-hunter-website/ )
 
 ## Usage
 

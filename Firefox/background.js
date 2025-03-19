@@ -4,6 +4,16 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 	if (changeInfo.status === 'complete' && tab.url) {
 		const url = new URL(tab.url);
 
+		// Clicks the due button
+		if (tab.url.includes("https://hunterschools.myschoolapp.com/app/student#studentmyday/assignment-center")) {
+			setTimeout(() => {
+				browser.scripting.executeScript({
+					target: { tabId: tabId },
+					func: dueButton
+				});
+			}, 200);
+		}
+
 		// Is Hunter Website?
 		if (url.hostname != 'hunterschools.myschoolapp.com') {
 			return;
@@ -17,7 +27,7 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 		// Is assignment?
 		if (url.pathname.includes("assignment-student-view")) {
 			const identifier = url.pathname.split('/').pop();
-			fetch(`https://hunterschools.myschoolapp.com/api/DataDirect/AssignmentCenterAssignments/?format=json&filter=1&dateStart=8%2F1%2F2024&dateEnd=10%2F1%2F2029&persona=2&statusList=&sectionList=`, {
+			fetch(`https://hunterschools.myschoolapp.com/api/DataDirect/AssignmentCenterAssignments/?format=json&filter=1&dateStart=10%2F1%2F2024&dateEnd=10%2F1%2F2029&persona=2&statusList=&sectionList=`, {
 				method: 'GET',
 				headers: {
 					'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36',
@@ -50,3 +60,27 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
 });
 
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+	if (message.action === "pageLoaded") {
+	browser.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+		browser.scripting.executeScript({
+		target: { tabId: tabs[0].id },
+		func: dueButton
+		});
+	});
+	}
+});
+
+function dueButton() {
+	function waitForElement() {	
+		const targetButton = document.querySelector("#calendar-header-container > div > div > div:nth-child(3) > div > div.col-md-4 > div > label:nth-child(3)");
+		
+		if (targetButton) {
+			targetButton.click();
+		} else {
+			setTimeout(waitForElement, 1000);
+		}
+	}
+	
+	waitForElement();
+}
